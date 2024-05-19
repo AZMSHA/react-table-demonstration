@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -30,4 +31,13 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+#main-header {
+  font-size: 4rem;
+  font-family: "Audiowide", sans-serif;
+}
+
+.next-logo {
+  padding: 2rem 0rem;
 }
