@@ -3,6 +3,7 @@ import React from "react";
 import {
   Column,
   ColumnFiltersState,
+  ColumnDef,
   RowData,
   flexRender,
   getCoreRowModel,
@@ -49,7 +50,7 @@ function TableLayout() {
     []
   );
 
-  const columns = React.useMemo<Column<Person, any>[]>(
+  const columns = React.useMemo<ColumnDef<Person, any>[]>(
     () => [
       {
         accessorKey: "firstName",
@@ -273,7 +274,7 @@ function Filter({ column }: { column: Column<any, unknown> }) {
           column.setFilterValue((old: [number, number]) => [value, old?.[1]])
         }
         placeholder="Min"
-        sx={{ width: "6rem" }}
+        style={{ width: "6rem" }}
       />
       <DebouncedInput
         type="number"
@@ -282,7 +283,7 @@ function Filter({ column }: { column: Column<any, unknown> }) {
           column.setFilterValue((old: [number, number]) => [old?.[0], value])
         }
         placeholder="Max"
-        sx={{ width: "6rem" }}
+        style={{ width: "6rem" }}
       />
     </Box>
   ) : filterVariant === "select" ? (
@@ -302,7 +303,7 @@ function Filter({ column }: { column: Column<any, unknown> }) {
       value={(columnFilterValue ?? "") as string}
       onChange={(value) => column.setFilterValue(value)}
       placeholder="Search..."
-      sx={{ width: "12rem" }}
+      style={{ width: "12rem" }}
     />
   );
 }
@@ -312,11 +313,7 @@ function DebouncedInput({
   onChange,
   debounce = 500,
   ...props
-}: {
-  value: string | number;
-  onChange: (value: string | number) => void;
-  debounce?: number;
-} & Omit<React.InputHTMLAttributes<HTMLInputElement>, "onChange">) {
+}) {
   const [value, setValue] = React.useState(initialValue);
 
   React.useEffect(() => {
