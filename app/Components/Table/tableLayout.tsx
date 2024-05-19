@@ -49,7 +49,7 @@ function TableLayout() {
     []
   );
 
-  const columns = React.useMemo<ColumnDef<Person, any>[]>(
+  const columns = React.useMemo<Column<Person, any>[]>(
     () => [
       {
         accessorKey: "firstName",

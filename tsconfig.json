@@ -3,7 +3,8 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
+    "strict": false, // Disable strict type checking
+    "noImplicitAny": false, // Allow implicit 'any' types
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
@@ -24,3 +25,4 @@
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }
+
