@@ -41,3 +41,12 @@ body {
 .next-logo {
   padding: 2rem 0rem;
 }
+
+#table {
+  background-color: rgba(255, 255, 255, 0.854);
+  padding: 3rem 2rem;
+}
+
+.MuiBox-root.css-19midj6 {
+  background-color: white;
+}

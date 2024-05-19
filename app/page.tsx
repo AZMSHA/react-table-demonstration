@@ -1,5 +1,5 @@
 import Image from "next/image";
-import TableWrapper from "./Components/Table/tableWrapper";
+import TableLayout from "./Components/Table/tableLayout";
 
 export default function Home(): any {
   return (
@@ -17,7 +17,7 @@ export default function Home(): any {
       <div>
         <h1 id="main-header">React Table Demonstration</h1>
       </div>
-      <TableWrapper />
+      <TableLayout />
     </main>
   );
 }
